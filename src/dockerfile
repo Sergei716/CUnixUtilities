@@ -1,0 +1,14 @@
+FROM ubuntu:24.04
+
+RUN apt update && \
+    apt install vim -y && \
+    apt install build-essential -y
+
+WORKDIR /project
+
+RUN mkdir -p cat grep
+
+COPY cat/ cat/.
+COPY grep/ grep/.
+
+CMD ["bash"]
